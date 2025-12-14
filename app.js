@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
 import {
   getAuth,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword, signOut
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
 
@@ -40,7 +40,7 @@ document.getElementById("loginBtn").addEventListener("click", () => {
 document.getElementById("logoutBtn").addEventListener("click", () => {
     signOut(auth).then(() => {
         dashboard.style.display = "none";
-        loginForm.style.display = "block";
+        loginForm.style.display = "flex";
     });
 });
 
